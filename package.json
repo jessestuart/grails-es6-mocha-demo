@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "An example Grails project with Babel and Mocha",
   "scripts": {
-    "test": "NODE_PATH=grails-app/assets/javascripts mocha --compilers es6:babel-register \"src/test/javascript/**/*.es6\""
+    "test": "NODE_PATH=grails-app/assets/javascripts mocha --compilers es6:babel-register \"src/test/javascript/**/*.es6\"",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "grails"
@@ -18,5 +20,9 @@
     "mocha": "2.3.4",
     "redux-devtools": "3.0.1",
     "webpack": "1.12.11"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.316.1"
   }
 }
